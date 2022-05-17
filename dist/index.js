@@ -119,7 +119,7 @@ const core = __webpack_require__(470);
 
 async function run() {
   try {
-    core.exportVariable('BRANCH_NAME', process.env.GITHUB_REF.split('/').slice(2).join('/'));
+    core.exportVariable('BRANCH_NAME', process.env.GITHUB_REF.split('/').slice(2, 3).join('/'));
   }
   catch (error) {
     core.setFailed(error.message);
